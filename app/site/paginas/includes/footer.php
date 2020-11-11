@@ -1,9 +1,9 @@
 <div class="container-fluid table-secondary pt-2">
     <footer class="container text-center ">
-        <img src="app/assets/img/footer.jpg" alt="">
+        <img src="app/assets/img/footer.png" alt="">
     </footer>
     <div class="container">
-        <p class="text-center pt-3 ">
+        <p class="text-center pt-1">
             Todos os direitos reservados &copy; 2020.
         </p>
     </div>
