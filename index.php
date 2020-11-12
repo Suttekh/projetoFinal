@@ -2,7 +2,7 @@
 // Header
 include_once "app/site/paginas/includes/header.php";
 
-// Navegação 
+// Menu de navegação 
 include_once "app/site/paginas/includes/navegacao.php";
 
 // Páginas do meu Site 
