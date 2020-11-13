@@ -1,4 +1,6 @@
 <?php
+//Verifica se está logado
+
 // Header
 //include_once "app/site/paginas/includes/header.php";
 
