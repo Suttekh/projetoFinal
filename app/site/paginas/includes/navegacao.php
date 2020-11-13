@@ -35,17 +35,7 @@
               <a class="nav-link btn btn-outline-success" href="cpanel.php?pg=cpanel">Administração do Site</a>
             </li>
           </ul>
-        <?php
-        }
-        ?>
-
-
-
-
-
-
-
-
+        <?php } ?>
       </div>
     </nav>
   </div>

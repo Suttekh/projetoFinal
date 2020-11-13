@@ -1,32 +1,45 @@
 <?php
 //Verifica se está logado
 
-// Header
-//include_once "app/site/paginas/includes/header.php";
+if (!isset($_SESSION['usuario'])) {
+    $usuario = 'Reginaldo';
+    $senha = '123456';
+    $projeto = ' Projeto Final';
 
-// Menu de navegação 
-//include_once "app/site/paginas/includes/navegacao.php";
+    session_start();
 
-// Páginas do meu Site 
-$paginas = isset($_GET['pg']);
+    $_SESSION['usuario'] = $usuario;
+    $_SESSION['email'] = $senha;
+    $_SESSION['projeto'] = $projeto;
+    
 
-if ($paginas) {
-    # code...
+    //    $_SESSION['usuario'] = $_POST['usuario'];
+    //  $_SESSION['email'] = $_POST['email'];
+
+
     switch ($_GET['pg']) {
-
         case 'cpanel':
-
-            include_once "app/painelAdm/paginas/login.php";
-            //include_once "app/site/paginas/inicial.php";
+            include_once "app/painelAdm/index.php";
+            break;
+       
+            case 'login':
+            include_once "app/painelAdm/index.php";
             break;
 
         default:
-            include_once "app/site/paginas/inicial.php";
+            # code...
             break;
     }
 } else {
-    include_once "app/site/paginas/inicial.php";
-}
+    include_once "app/painelAdm/paginas/login.php";
+};
 
-// Rodapé
-//include_once "app/site/paginas/includes/footer.php";
+
+
+
+// $paginas = isset($_GET['pg']);
+
+// if ($paginas) {
+// } else {
+//     include_once "app/site/paginas/inicial.php";
+// }

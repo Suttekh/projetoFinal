@@ -18,17 +18,15 @@
 
 <body class="hold-transition login-page">
   <div class="login-box">
-    <div class="login-logo">
-      <a href="#"><b>Painel Adm
-    </div>
+    <div class="login-logo"><a href="#"><b>Painel Adm</div>
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
         <p class="login-box-msg">Preencha com seus dados para iniciar uma Sessão.</p>
 
-        <form action="" method="post">
+        <form action="cpanel.php?pg=cpanel" method="post">
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="E-mail">
+            <input type="text" class="form-control" placeholder="E-mail">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -44,7 +42,8 @@
             </div>
           </div>
           <div class="social-auth-links text-center mb-3">
-            <button type="submit" class="btn btn-block btn-primary"><strong>Entrar</strong></a>            
+            <button type="submit" class="btn btn-block btn-primary mb-2"><strong>Entrar</strong></button>            
+            <a href="index.php?pg=inicial" class="btn btn-block btn-warning">Voltar ao site</a>
           </div>
         </form>
       </div>
