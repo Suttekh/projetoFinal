@@ -26,7 +26,7 @@
 
         <form action="cpanel.php?pg=cpanel" method="post">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="E-mail">
+            <input type="text" name="usuario" class="form-control" placeholder="E-mail">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -34,7 +34,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Senha">
+            <input type="password" name="senha" class="form-control" placeholder="Senha">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>

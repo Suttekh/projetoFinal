@@ -1,45 +1,40 @@
 <?php
-//Verifica se está logado
+include_once "app/painelAdm/helpers/helperAdm.php";
 
-if (!isset($_SESSION['usuario'])) {
-    $usuario = 'Reginaldo';
-    $senha = '123456';
-    $projeto = ' Projeto Final';
+session_start();
+//echo $_SESSION['usuario'];
 
-    session_start();
+$pg = 'cpanel';
 
-    $_SESSION['usuario'] = $usuario;
-    $_SESSION['email'] = $senha;
-    $_SESSION['projeto'] = $projeto;
-    
+if (isset($_GET['pg'])) {
+    $pg = $_GET['pg'];
+}
 
-    //    $_SESSION['usuario'] = $_POST['usuario'];
-    //  $_SESSION['email'] = $_POST['email'];
+//Verifica se há alguém logado
+if (isset($_SESSION['usuario'])) {
 
+    switch ($pg) {
 
-    switch ($_GET['pg']) {
         case 'cpanel':
             include_once "app/painelAdm/index.php";
             break;
-       
-            case 'login':
-            include_once "app/painelAdm/index.php";
+
+        case 'sair':
+
             break;
 
         default:
-            # code...
+            include_once "app/painelAdm/index.php";
             break;
     }
 } else {
-    include_once "app/painelAdm/paginas/login.php";
-};
-
-
-
-
-// $paginas = isset($_GET['pg']);
-
-// if ($paginas) {
-// } else {
-//     include_once "app/site/paginas/inicial.php";
-// }
+    // Verifica se foi submetido método POST
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        
+        if (verificaSeLogado()) {
+            include_once "app/painelAdm/index.php";
+        }        
+    } else {
+        include_once "app/painelAdm/paginas/login.php";
+    }
+}
