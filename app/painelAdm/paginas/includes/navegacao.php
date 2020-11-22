@@ -44,6 +44,12 @@
          with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
+                        <a href="?pg=usuarios-listar" class="nav-link">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>Usuarios</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="?pg=inicial" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>Inicial</p>
