@@ -1,4 +1,10 @@
-    <!-- Content Wrapper. Contains page content -->
+   <?php
+$resultDados = new Conexao();
+$dados = $resultDados -> consultarBanco('SELECT * FROM usuarios');
+?>
+   
+   
+   <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -25,7 +31,9 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Escolha uma mensagem para edição</h3>
+                                <h3 class="card-title">Escolha uma mensagem para edição</h3> <br>
+                                <a href="?pg=usuarios-form" class="btn btn-success btn-lg"><span class="fa fa-user-plus"></span>  Novo Usuário</a>
+                                
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -40,58 +48,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php foreach ($dados as $DadosUsuarios) {?>
                                         <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 4.0
+                                            <td><?php echo $DadosUsuarios['id_usuario'] ?></td>
+                                            <td><?php echo $DadosUsuarios['nome'] ?>
                                             </td>
-                                            <td>Win 95+</td>
-                                            <td> 4</td>
+                                            <td><?php echo $DadosUsuarios['datacriacao'] ?></td>
+                                            <td> <?php echo $DadosUsuarios['dataatualizacao'] ?> </td>
                                             <td class="text-center">
-                                                <a href="" class="btn btn-success"><span class="regi-eye"></span></a>
-                                                <a href="" class="btn btn-warning"><span class="regi-pencil2"></span></a>
-                                                <a href="" class="btn btn-danger"><span class="regi-trash"></span></a>
+                                                <a href="?pg=usuario_visualizar&id=" class="btn btn-success"><span class="regi-eye"></span></a>
+                                                <a href="?pg=usuario_editar&id=" class="btn btn-warning"><span class="regi-pencil2"></span></a>
+                                                <a href="?pg=usuario_apagar&id=" class="btn btn-danger"><span class="regi-trash"></span></a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 5.0
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td>5</td>
-                                            <td class="text-center">
-                                                <a href="" class="btn btn-success"><span class="regi-eye"></span></a>
-                                                <a href="" class="btn btn-warning"><span class="regi-pencil2"></span></a>
-                                                <a href="" class="btn btn-danger"><span class="regi-trash"></span></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 5.5
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td>5.5</td>
-                                            <td class="text-center">
-                                                <a href="" class="btn btn-success"><span class="regi-eye"></span></a>
-                                                <a href="" class="btn btn-warning"><span class="regi-pencil2"></span></a>
-                                                <a href="" class="btn btn-danger"><span class="regi-trash"></span></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 6
-                                            </td>
-                                            <td>Win 98+</td>
-                                            <td>6</td>
-                                            <td class="text-center">
-                                                <a href="" class="btn btn-success"><span class="regi-eye"></span></a>
-                                                <a href="" class="btn btn-warning"><span class="regi-pencil2"></span></a>
-                                                <a href="" class="btn btn-danger"><span class="regi-trash"></span></a>
-                                            </td>
-                                        </tr>
+                                        <?php } ?>
+                                      
 
                                 </table>
                             </div>

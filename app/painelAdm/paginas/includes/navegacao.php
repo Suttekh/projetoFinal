@@ -44,7 +44,7 @@
          with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="?pg=usuarios-listar" class="nav-link">
+                        <a href="cpanel.php?pg=listar" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
                             <p>Usuarios</p>
                         </a>

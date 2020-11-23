@@ -36,6 +36,31 @@ if (isset($_SESSION['usuario'])) {
             include_once "app/painelAdm/paginas/includes/rodape.php";
             break;
 
+        case 'listar':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/usuarios-listar.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
+
+        case 'usuarios-novo':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            ///inserir usuario
+            inserirUsuario();
+
+
+            include_once "app/painelAdm/paginas/usuarios-novo.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
+
+        case 'usuarios-form':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/usuarios-form.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
+
         case 'sair':
             session_destroy();
             Header('Location: ' . $_SERVER['PHP_SELF']);

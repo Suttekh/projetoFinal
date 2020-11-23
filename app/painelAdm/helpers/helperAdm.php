@@ -16,9 +16,11 @@ function verificaSeLogado()
         ':usuario' => $usuario
     );
 
-    $resultadoConsulta = $resultConexao->consultarBanco('SELECT * FROM usuarios 
-                                                        WHERE nome = :usuario', 
-                                                        $parametros);
+    $resultadoConsulta = $resultConexao->consultarBanco(
+        'SELECT * FROM usuarios 
+                                                        WHERE nome = :usuario',
+        $parametros
+    );
 
     if (count($resultadoConsulta) > 0) {
         //adiciona sessão
@@ -28,4 +30,22 @@ function verificaSeLogado()
         //usuario e senha não confere
         echo 'Usuário e senha não confere';
     }
+}
+
+function inserirUsuario()
+{
+    ///pegando as variaveis via post
+    $nome = trim($_POST['nome']);
+    $senha = trim($_POST['senha']);
+
+    ///validar as variaveis E ENCRIPTAR A SENHA
+    $parametros = array(
+        ':nome' => $nome,
+        ':senha' => password_hash($senha, PASSWORD_DEFAULT)
+    );
+
+$resultDados = new Conexao();
+$resultDados->intervencaoNoBanco('INSERT INTO usuarios(nome,senha) VALUES (:nome,:senha)',$parametros);
+include_once "app/painelAdm/paginas/usuarios-listar.php";
+
 }

@@ -23,7 +23,7 @@ class Conexao
             $this->db_password,
             array(PDO::ATTR_PERSISTENT => true)
         );
-
+    
         if ($debug) {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
