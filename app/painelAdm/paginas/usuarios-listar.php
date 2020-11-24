@@ -56,9 +56,9 @@ $dados = $resultDados -> consultarBanco('SELECT * FROM usuarios');
                                             <td><?php echo $DadosUsuarios['datacriacao'] ?></td>
                                             <td> <?php echo $DadosUsuarios['dataatualizacao'] ?> </td>
                                             <td class="text-center">
-                                                <a href="?pg=usuario_visualizar&id=" class="btn btn-success"><span class="regi-eye"></span></a>
-                                                <a href="?pg=usuario_editar&id=" class="btn btn-warning"><span class="regi-pencil2"></span></a>
-                                                <a href="?pg=usuario_apagar&id=" class="btn btn-danger"><span class="regi-trash"></span></a>
+                                                <a href="?pg=usuario-visualizar&id=<?php echo $DadosUsuarios['id_usuario'] ?>" class="btn btn-success"><span class="regi-eye"></span></a>
+                                                <a href="?pg=usuarios-editar&id=<?php echo $DadosUsuarios['id_usuario'] ?>" class="btn btn-warning"><span class="regi-pencil2"></span></a>
+                                                <a href="?pg=usuario-apagar&id=<?php echo $DadosUsuarios['id_usuario'] ?>" class="btn btn-danger"><span class="regi-trash"></span></a>
                                             </td>
                                         </tr>
                                         <?php } ?>

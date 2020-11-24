@@ -49,3 +49,19 @@ $resultDados->intervencaoNoBanco('INSERT INTO usuarios(nome,senha) VALUES (:nome
 include_once "app/painelAdm/paginas/usuarios-listar.php";
 
 }
+function atualizarUsuario(){
+    //pegando variaveis via post
+    $idUsuario = trim($_POST['id']);
+    $senha = trim($_POST['senha']);
+
+    //validando as variaveis
+$parametros = array(
+    ':id_usuario'=>$idUsuario,
+    ':senha'=>$senha
+);
+
+//att no banco
+$atualizaUsuario = new Conexao();
+$atualizaUsuario->intervencaoNoBanco('UPDATE usuarios SET senha = :senha WHERE id_usuario = :id_usuario'. $atualizaUsuario);
+include_once "app/painelAdm/paginas/usuarios-listar.php";
+}
