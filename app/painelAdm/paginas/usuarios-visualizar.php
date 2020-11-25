@@ -31,7 +31,7 @@ if ($id) {
                 <?php foreach ($dados as $dadosUsuarios) { ?>
 
                     <div class="jumbotron">
-                        <h5 class="display-3 text-center"> Nome usuário</h5>
+                        <h5 id="visu" class="display-3 text-center"><b> <i> Nome usuário </b> </i></h5>
                         <div class="display-4">
                             <?php echo $dadosUsuarios['nome'] ?>
                         </div>

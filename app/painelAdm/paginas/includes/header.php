@@ -35,6 +35,8 @@
   <link rel="stylesheet" href="app/painelAdm/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="app/painelAdm/plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="app/painelAdm/dist/css/visu.css">
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

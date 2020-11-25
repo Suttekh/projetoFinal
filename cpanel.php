@@ -52,29 +52,38 @@ if (isset($_SESSION['usuario'])) {
             include_once "app/painelAdm/paginas/includes/rodape.php";
             break;
 
-            case 'usuario-visualizar':
-                include_once "app/painelAdm/paginas/includes/header.php";
-                include_once "app/painelAdm/paginas/includes/navegacao.php";
-                include_once "app/painelAdm/paginas/usuarios-visualizar.php";
-                include_once "app/painelAdm/paginas/includes/rodape.php";
-                break;
+        case 'usuario-visualizar':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/usuarios-visualizar.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
 
-            case 'usuarios-editar':
-                include_once "app/painelAdm/paginas/includes/header.php";
-                include_once "app/painelAdm/paginas/includes/navegacao.php";
-                if ($_REQUEST['REQUEST_METHOD'] == 'POST'){
-                    //func de atyalização de usuário
+        case 'usuarios-editar':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                //func de atyalização de usuário
                 atualizarUsuario();
-                } else {
-echo'mostrar usuario pelo id';
+            } else {
+              $IdUsuarioEditar = isset($_GET['id']);
 
-                }
+              if ($IdUsuarioEditar){
+                  $DadosUsuario = visualizarUsuario($IdUsuarioEditar);
+                  include_once "app/painelAdm/paginas/usuarios-editar.php";
+                  
+                  
+              } else{
+                  Header('Location: ?pg=listar');
+              }
+
+            }
 
 
 
-                include_once "app/painelAdm/paginas/usuarios-editar.php";
-                include_once "app/painelAdm/paginas/includes/rodape.php";
-                break;
+           
+            include_once "app/painelAdm/paginas/includes/rodape.php";
+            break;
 
         case 'usuario-apagar':
             $parametros = array(
