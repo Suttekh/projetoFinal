@@ -48,8 +48,7 @@
                                             <td>Win 95+</td>
                                             <td> 4</td>
                                             <td class="text-center">
-                                                <a href="" class="btn btn-success"><span class="regi-eye"></span></a>
-                                                <a href="" class="btn btn-warning"><span class="regi-pencil2"></span></a>
+                                                <a href="cpanel.php?pg=listar" class="btn btn-success"><span class="regi-eye"></span></a>
                                                 <a href="" class="btn btn-danger"><span class="regi-trash"></span></a>
                                             </td>
                                         </tr>
@@ -62,7 +61,7 @@
                                             <td>5</td>
                                             <td class="text-center">
                                                 <a href="" class="btn btn-success"><span class="regi-eye"></span></a>
-                                                <a href="" class="btn btn-warning"><span class="regi-pencil2"></span></a>
+
                                                 <a href="" class="btn btn-danger"><span class="regi-trash"></span></a>
                                             </td>
                                         </tr>
@@ -75,7 +74,7 @@
                                             <td>5.5</td>
                                             <td class="text-center">
                                                 <a href="" class="btn btn-success"><span class="regi-eye"></span></a>
-                                                <a href="" class="btn btn-warning"><span class="regi-pencil2"></span></a>
+        
                                                 <a href="" class="btn btn-danger"><span class="regi-trash"></span></a>
                                             </td>
                                         </tr>
@@ -88,7 +87,7 @@
                                             <td>6</td>
                                             <td class="text-center">
                                                 <a href="" class="btn btn-success"><span class="regi-eye"></span></a>
-                                                <a href="" class="btn btn-warning"><span class="regi-pencil2"></span></a>
+        
                                                 <a href="" class="btn btn-danger"><span class="regi-trash"></span></a>
                                             </td>
                                         </tr>

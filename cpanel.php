@@ -90,7 +90,7 @@ if (isset($_SESSION['usuario'])) {
                 ':id_usuario' => $_GET['id']
             );
             $apagarUsuario = new Conexao();
-            $apagarUsuario->intervencaoNoBanco('DELETE FROM usuarios WHERE id_usuario = id_usuario', $parametros);
+            $apagarUsuario->intervencaoNoBanco('DELETE FROM usuarios WHERE id_usuario = :id_usuario', $parametros);
             Header('Location: ?pg=listar');
             break;
 
