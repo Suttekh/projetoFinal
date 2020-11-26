@@ -1,12 +1,7 @@
-<div class="container-fluid table-secondary pt-2">
-    <footer class="container text-center ">
-        <img src="app/assets/img/footer.png" alt="">
+<div id="pe" class="container-fluid">
+    <footer class="container-fluid text-center ">
+    <img class="rounded-circle" src="app/assets/img/mark.png" height="200" alt="">
     </footer>
-    <div class="container">
-        <p class="text-center pt-1">
-            Todos os direitos reservados &copy; 2020.
-        </p>
-    </div>
 </div>
 
 

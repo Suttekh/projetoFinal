@@ -29,5 +29,5 @@
     <!-- Header -->
 
     <header class="container-fluid p-0">
-        <img src="app/assets/img/bannerHeader.jpg" class="img-fluid w-100 p-0"  alt="">
+        <img src="app/assets/img/gut.jpg" class="w-100" height="300" alt="">
     </header>

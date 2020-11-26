@@ -1,5 +1,6 @@
-/* Meu css */
-
-body{
- /*   background-image: url("../img/background.jpg"); */
+#pe{
+    background-image: url(https://images5.alphacoders.com/764/thumb-1920-764519.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
 }
