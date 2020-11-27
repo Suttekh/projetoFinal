@@ -95,3 +95,20 @@ function visualizarUsuario($id)
         }
     }
 }
+
+
+function visualizar()
+{
+  $idUsuario = $_GET['id'];
+  $parametros = array(
+
+':visualizar' => 1,
+':id_contato' => $idUsuario
+
+  );
+
+ //att no banco
+ $atualizaUsuario = new Conexao();
+ $atualizaUsuario->intervencaoNoBanco('UPDATE contato SET visualizar = :visualizar  WHERE id_contato = :id_contato', $parametros);
+
+}

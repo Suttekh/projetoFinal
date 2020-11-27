@@ -62,7 +62,7 @@ $dados = $resultDados -> consultarBanco('SELECT * FROM usuarios');
                                             </td>
                                         </tr>
                                         <?php } ?>
-                                      
+                                    </tbody> 
 
                                 </table>
                             </div>

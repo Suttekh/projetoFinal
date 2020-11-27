@@ -51,19 +51,19 @@
                     </li>
                     <li class="nav-item">
                         <a href="?pg=inicial" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas regi-homeassistant"></i>
                             <p>Inicial</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="?pg=produtos" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas regi-box"></i>
                             <p>Produtos</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="?pg=contato" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas regi-phone"></i>
                             <p>Contato</p>
                         </a>
                     </li>
@@ -72,4 +72,5 @@
             <!-- /.sidebar-menu -->
         </div>
         <!-- /.sidebar -->
+        </div>
     </aside>

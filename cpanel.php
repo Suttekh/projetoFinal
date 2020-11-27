@@ -66,22 +66,15 @@ if (isset($_SESSION['usuario'])) {
                 //func de atyalização de usuário
                 atualizarUsuario();
             } else {
-              $IdUsuarioEditar = isset($_GET['id']);
+                $IdUsuarioEditar = isset($_GET['id']);
 
-              if ($IdUsuarioEditar){
-                  $DadosUsuario = visualizarUsuario($IdUsuarioEditar);
-                  include_once "app/painelAdm/paginas/usuarios-editar.php";
-                  
-                  
-              } else{
-                  Header('Location: ?pg=listar');
-              }
-
+                if ($IdUsuarioEditar) {
+                    $DadosUsuario = visualizarUsuario($IdUsuarioEditar);
+                    include_once "app/painelAdm/paginas/usuarios-editar.php";
+                } else {
+                    Header('Location: ?pg=listar');
+                }
             }
-
-
-
-           
             include_once "app/painelAdm/paginas/includes/rodape.php";
             break;
 
@@ -94,6 +87,7 @@ if (isset($_SESSION['usuario'])) {
             Header('Location: ?pg=listar');
             break;
 
+
         case 'usuarios-form':
             include_once "app/painelAdm/paginas/includes/header.php";
             include_once "app/painelAdm/paginas/includes/navegacao.php";
@@ -104,6 +98,22 @@ if (isset($_SESSION['usuario'])) {
         case 'sair':
             session_destroy();
             Header('Location: ' . $_SERVER['PHP_SELF']);
+            break;
+
+        case 'contato-apagar':
+            $parametros = array(
+                ':id_contato' => $_GET['id']
+            );
+            $apagarUsuario = new Conexao();
+            $apagarUsuario->intervencaoNoBanco('DELETE FROM contato WHERE id_contato = :id_contato', $parametros);
+            Header('Location: ?pg=contato');
+            break;
+
+        case 'contato-visualizar':
+            include_once "app/painelAdm/paginas/includes/header.php";
+            include_once "app/painelAdm/paginas/includes/navegacao.php";
+            include_once "app/painelAdm/paginas/contato-visualizar.php";
+            include_once "app/painelAdm/paginas/includes/rodape.php";
             break;
 
         default:
