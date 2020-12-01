@@ -31,14 +31,14 @@ function verificaSeLogado()
             $_SESSION['usuario'] = $usuario;
             return true;
         } else {
-             echo 'senha não confere';
+             $erro = 'Usuario ou senha invalidos';
+             include_once 'app/painelAdm/paginas/login.php';
              return false;
         }
 
-        return true;
     } else {
-        //usuario e senha não confere
-        echo 'Usuário e senha não confere';
+        $erro = 'Usuario ou senha invalidos';
+        include_once 'app/painelAdm/paginas/login.php';
     }
 }
 
@@ -54,8 +54,27 @@ function inserirUsuario()
         ':senha' => password_hash($senha, PASSWORD_DEFAULT)
     );
 
+    //pegando a imagem
+
+    $img_usuario = $_FILES['img_usuario']['tmp_name']; 
+
+    move_uploaded_file($_FILES['img_usuario']['tmp_name'], 'app/painelAdm/assets/img' . $_FILES['img_usuario']['name']);
+    
+
+    ///validar as variaveis E ENCRIPTAR A SENHA
+    $parametros = array(
+        ':nome' => $nome,
+        ':senha' => password_hash($senha, PASSWORD_DEFAULT),
+    
+
+
+':img_usuario' => ($_FILES['img_usuario']['name'] == true) ?
+'app/painelAdm/assets/img/' . $_FILES['img_usuario']['name']:
+'app/painelAdm/assets/img/anonimous.svg' 
+);
+
     $resultDados = new Conexao();
-    $resultDados->intervencaoNoBanco('INSERT INTO usuarios(nome,senha) VALUES (:nome,:senha)', $parametros);
+    $resultDados->intervencaoNoBanco('INSERT INTO usuarios(nome,senha, img_usuario) VALUES (:nome,:senha, :img_usuario)', $parametros);
     include_once "app/painelAdm/paginas/usuarios-listar.php";
 }
 function atualizarUsuario()

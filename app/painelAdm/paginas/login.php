@@ -15,55 +15,60 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="app/painelAdm/dist/css/adminlte.min.css">
   <!-- CSS do login -->
-<link rel="stylesheet" href="app/painelAdm/dist/css/login.css">
+  <link rel="stylesheet" href="app/painelAdm/dist/css/login.css">
 </head>
 
 <body id="logi" class="hold-transition login-page">
-<div class="login-box">
-  <!-- /.login-logo -->
-  <div id="logbody">
-    <div class="card-header text-center">
-      <a style="color: whitesmoke;" href="" class="h1"><b>Tela de Login</b></a>
-    </div>
-    <div class="card-body">
-      <p style="color: whitesmoke;" class="login-box-msg">Conecte-se para iniciar a Sessão
-      </p>
+  <div class="login-box">
+    <!-- /.login-logo -->
+    <div id="logbody">
+      <div class="card-header text-center">
+        <a style="color: whitesmoke;" href="" class="h1"><b>Tela de Login</b></a>
+      </div>
+      <div class="card-body">
+        <p style="color: whitesmoke;" class="login-box-msg">Conecte-se para iniciar a Sessão
+        </p>
+        <?php if (isset($erro)) { ?>
 
-      <form action="cpanel.php?pg=cpanel" method="post">
-        <div class="input-group mb-3">
-          <input type="user" name="usuario" class="form-control" placeholder="Usuário">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+          <div class="alert alert-danger" id="erro"> <?php echo $erro; ?> </div>
+        <?php } ?>
+        
+
+        <form action="cpanel.php?pg=cpanel" method="post">
+          <div class="input-group mb-3">
+            <input type="user" name="usuario" class="form-control" placeholder="Usuário">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" name="senha" class="form-control" placeholder="Senha">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+          <div class="input-group mb-3">
+            <input type="password" name="senha" class="form-control" placeholder="Senha">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="social-auth-links text-center mt-2 mb-3">
-        <button id="ent" type="submit" class="btn btn-block btn-primary"> <strong> <b> Entrar </b></strong> </button>
-        <a id="voltar" href="index.php?pg=inicial"  type="submit" class="btn btn-block btn-primary"> <strong> <b> Voltar ao Início </b></strong> </a>
+          <div class="social-auth-links text-center mt-2 mb-3">
+            <button id="ent" type="submit" class="btn btn-block btn-primary"> <strong> <b> Entrar </b></strong> </button>
+            <a id="voltar" href="index.php?pg=inicial" type="submit" class="btn btn-block btn-primary"> <strong> <b> Voltar ao Início </b></strong> </a>
+
+          </div>
+
+        </form>
+
+
+        <!-- /.social-auth-links -->
+
 
       </div>
-    
-      </form>
-
-     
-      <!-- /.social-auth-links -->
-
-     
+      <!-- /.card-body -->
     </div>
-    <!-- /.card-body -->
+    <!-- /.card -->
   </div>
-  <!-- /.card -->
-</div>
-<!-- /.login-box -->
+  <!-- /.login-box -->
 
   <!-- jQuery -->
   <script src="app/painelAdm/plugins/jquery/jquery.min.js"></script>
@@ -71,6 +76,8 @@
   <script src="app/painelAdm/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="app/painelAdm/dist/js/adminlte.min.js"></script>
+
+  <script src="app/assets/js/funcoes.js"></script>
 </body>
 
 </html>

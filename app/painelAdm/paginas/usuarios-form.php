@@ -28,7 +28,7 @@ $dados = $resultDados->consultarBanco('SELECT * FROM usuarios');
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <form action="?pg=usuarios-novo" method="POST">
+                    <form action="?pg=usuarios-novo" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Nome de Usuário</label>
                             <input type="text" class="form-control" name="nome" id="Usuario" autofocus placeholder="Digite seu nome de usuário">
@@ -37,6 +37,12 @@ $dados = $resultDados->consultarBanco('SELECT * FROM usuarios');
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Senha</label>
                             <input type="password" class="form-control" name="senha" id="Senha" autofocus placeholder="Digite sua Senha">
+                        </div>
+
+                        <div class="form-group">
+
+                        <input type="file" name="img_usuario">
+
                         </div>
 
                         <div class="form-group">
